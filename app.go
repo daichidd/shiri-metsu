@@ -15,7 +15,7 @@ func main() {
 		shiri = [8]string{
 			"／￣￣￣＼",
 			"|　ー　ー|　  ／",
-			"|　 ●　● | 　|　",
+			"|　 ●　● | 　|  ",
 			"\\　　 □  /　<  ",
 			" ＼　　 イ 　 ＼",
 			"  ／　　　＼",
@@ -35,14 +35,29 @@ func main() {
 	}
 
 	mostLong := fNum
+	f := true
 	if sNum > fNum {
 		mostLong = sNum
+		f = false
 	}
 
-	topLine := "￣"
-	bottomLine := "＿"
-	empty := "　"
-	for i := 0; i < mostLong-1; i++ {
+	lineEmpties := ""
+	emptyLong := 0
+
+	if f == false {
+		emptyLong = mostLong - fNum
+	} else {
+		emptyLong = mostLong - sNum
+	}
+
+	for i := 0; i < emptyLong; i++ {
+		lineEmpties += "　"
+	}
+
+	topLine := ""
+	bottomLine := ""
+	empty := ""
+	for i := 0; i < mostLong; i++ {
 		topLine += "￣"
 		bottomLine += "＿"
 		empty += "　"
@@ -51,13 +66,21 @@ func main() {
 	shiri[1] += topLine
 	shiri[1] += "＼"
 
-	shiri[2] += *first + "　|"
-	if sNum != 0 {
-		shiri[3] += *second + "　|"
+	closeLine := "　|"
+
+	fLine := *first
+	sLine := *second
+	if f == false {
+		fLine += lineEmpties
 	} else {
-		shiri[3] += empty + "　|"
+		sLine += lineEmpties
 	}
 
+	fLine += closeLine
+	sLine += closeLine
+	shiri[2] += fLine
+
+	shiri[3] += sLine
 	shiri[4] += bottomLine + "／"
 
 	for _, str := range shiri {
