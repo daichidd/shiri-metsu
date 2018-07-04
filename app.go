@@ -39,8 +39,6 @@ func main() {
 		mostLong = sNum
 	}
 
-	fmt.Println(mostLong)
-
 	topLine := "￣"
 	bottomLine := "＿"
 	empty := "　"
