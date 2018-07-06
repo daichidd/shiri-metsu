@@ -16,7 +16,7 @@ func main() {
 			"／￣￣￣＼",
 			"|　ー　ー|　  ／",
 			"|　 ●　● | 　|  ",
-			"\\　　 □  /　<  ",
+			"\\　　 □  /　<   ",
 			" ＼　　 イ 　 ＼",
 			"  ／　　　＼",
 			"/　|　　　 \\\\　支離滅裂な",
@@ -66,7 +66,7 @@ func main() {
 	shiri[1] += topLine
 	shiri[1] += "＼"
 
-	closeLine := "　|"
+	closeLine := " |"
 
 	fLine := *first
 	sLine := *second
